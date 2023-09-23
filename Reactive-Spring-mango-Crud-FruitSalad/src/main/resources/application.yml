@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: raj
+      host: mahabala
+      port: 27017

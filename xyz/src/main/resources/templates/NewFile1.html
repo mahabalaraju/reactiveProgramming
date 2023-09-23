@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/4604637498.js"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+
+		<table class="table table-stripped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Address</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="w:${epr}">
+					<td type="hidden" th:text="${w.id}"></td>
+					<td th:text="${w.name}"></td>
+					<td th:text="${w.address}"></td>
+					<td><a style="color: black"
+						th:href="@{/update/{id}(id=${w.id})}"><i
+							class="fa fa-pencil-square" aria-hidden="true"></i></a>
+				&nbsp&nbsp
+					
+					<a style="color: brown"
+						th:href="@{/delete/{id}(id=${w.id})}"><i class="fa fa-trash"
+							aria-hidden="true"></i></a></td>
+
+					</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<a th:href="@{/addperson}" class="btn btn-primary">add new person</a>
+	</div>
+</body>
+</html>
